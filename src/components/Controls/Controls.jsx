@@ -1,16 +1,29 @@
+import PropTypes from 'prop-types';
+import s from "./Controls.module.css"
 
-import s from  "./Controls.module.css"
-
-
-function Controls({onGood,onNeutral,onBad}) {
+function Controls({ options, onLeaveFeedback }) {
+  
     return (
-
-        <div>
-          <button className={s.button} type='button' onClick={onGood}>Good</button>
-          <button className={s.button} type='button' onClick={onNeutral}>Neutral</button>
-          <button className={s.button} type='button' onClick={onBad}>Bad</button>
-        </div>
+      <ul>
+        {options.map(option => {
+          return (
+              <button
+                  key={option}
+                  className={s.button}
+                  name={option}
+                  type='button'
+                  onClick={() => onLeaveFeedback(option)}>
+                  {option}
+              </button>
+          )
+        })}
+      </ul>
     );
+}
+
+Controls.propTypes = {
+  onLeaveFeedback: PropTypes.func.isRequired,
+  options: PropTypes.array.isRequired,
 }
 
 export default Controls;
