@@ -20,19 +20,10 @@ function Controls({ options, onLeaveFeedback }) {
       </ul>
     );
 }
+
 Controls.propTypes = {
-  options: PropTypes.array.isRequired,
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
   onLeaveFeedback: PropTypes.func.isRequired,
 }
-
-// ЯК ОПИСАТИ МАСИВ ЧОГО, ПОСТІЙНО ВИДАЄ ПОМИЛКУ В КОНСОЛІ?
-// Controls.propTypes = {
-//   options: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       option: PropTypes.object.isRequired,
-//     }),
-//   ),
-//   onLeaveFeedback: PropTypes.func.isRequired,
-// }
 
 export default Controls;

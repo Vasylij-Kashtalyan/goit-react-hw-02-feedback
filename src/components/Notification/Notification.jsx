@@ -7,7 +7,7 @@ function Notiffication({message}) {
 }
 
 Notification.propTypes = {
-    title: PropTypes.string.isRequired,
+    message: PropTypes.string.isRequired,
 };
 
 export default Notiffication;
