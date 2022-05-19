@@ -13,17 +13,26 @@ function Controls({ options, onLeaveFeedback }) {
                   name={option}
                   type='button'
                   onClick={() => onLeaveFeedback(option)}>
-                  {option}
+                  {option.toUpperCase()}
               </button>
           )
         })}
       </ul>
     );
 }
-
 Controls.propTypes = {
-  onLeaveFeedback: PropTypes.func.isRequired,
   options: PropTypes.array.isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
 }
+
+// ЯК ОПИСАТИ МАСИВ ЧОГО, ПОСТІЙНО ВИДАЄ ПОМИЛКУ В КОНСОЛІ?
+// Controls.propTypes = {
+//   options: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       option: PropTypes.object.isRequired,
+//     }),
+//   ),
+//   onLeaveFeedback: PropTypes.func.isRequired,
+// }
 
 export default Controls;
